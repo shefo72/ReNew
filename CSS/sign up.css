@@ -1,0 +1,230 @@
+main .container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 20px;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+.left img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.right {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+form label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  margin-left: 5px;
+  color: var(--subColor);
+}
+
+form .gov {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+form .gov label {
+  display: flex;
+}
+
+
+form input, form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+form input:focus {
+  transform: translateY(-3px);
+  border: 2px solid rgba(0, 0, 0);
+}
+
+input[type="name"],
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    font-size: 16px;
+    background-color: #f7f3f0;
+    border-radius: 10px;
+    padding: 13px 9px;
+    color: black;
+    transition: all 0.3s ease;
+    border: 2px solid var(--subColor);
+}
+
+.Terms {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  accent-color: var(--subColor);
+  font-size: 90px;
+}
+.Terms input:focus{
+  transform: translateY(0px);
+}
+.Terms label {
+  margin-left: 10px;
+}
+.Terms a {
+  text-decoration: none;
+  font-weight: bold;
+  color: darkred;
+}
+.Terms a:hover{
+  text-decoration: underline;
+}
+
+.signup {
+  background-color: var(--accentColor);
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 13px;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.signup:hover {
+  background-color: var(--subColor);
+  transform: translateY(-3px);
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  main {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .left {
+    margin-bottom: 30px;
+  }
+  
+  .right {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 15px;
+  }
+  
+  .signup {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Terms & Conditions */
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 950px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: darkred;
+}
+.modal h1 i,.modal h2 i {
+  margin-right: 10px;
+  color: darkred;
+}
+.modal h1 i {
+  color: darkred;
+}
+
+.modal p {
+  color: var(--subColor);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.modal h2 {
+  color: darkred;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.modal p:last-child {
+  color: var(--subColor);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--subColor);
+}
