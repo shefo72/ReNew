@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -10,14 +10,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 20px;
-    max-width: 1160px;
+    padding: 50px 10px;
+    max-width:1200px ;
     margin: 0 auto;
 }
 
 .seccon {
-    max-width: 45%;
-    margin-left: 40px;
+    max-width: 50%;
+    margin-left: 10px;
 }
 
 .seccon h1 {
@@ -46,7 +46,7 @@
 .seccon button {     
     background-color: #c78045;     
     color: #ffffff;     
-    padding: 10px 25px;     
+    padding: 15px 25px;     
     border: none;     
     cursor: pointer;     
     font-size: 16px;     
@@ -90,7 +90,7 @@
     display: flex;
     flex-direction: column;
     height: 10%;
-    width: 45%;
+    width: 50%;
     justify-content: center;
     align-items: flex-end;
 }
@@ -150,11 +150,6 @@
     
     .seccon p {
         font-size: 16px;
-    }
-    
-    .seccon button {
-        padding: 8px 20px;
-        font-size: 14px;
     }
 }
 

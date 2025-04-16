@@ -43,26 +43,26 @@
           <!-- Full name -->
           <div class="input">
             <label class="name">Full Name</label>
-            <input type="name" id="name" name="name" />
+            <input type="name" id="name" name="name" required />
           </div>
 
           <!-- email -->
           <div class="input">
             <label class="email">Email</label>
-            <input type="email" id="email" name="email" />
+            <input type="email" id="email" name="email" required />
           </div>
 
           <!-- phone number -->
           <div class="input">
             <label class="phone">Phone number</label>
-            <input type="text" id="phone" name="phone" />
+            <input type="text" id="phone" name="phone" required />
           </div>
 
           <!-- Password -->
           <div class="input">
             <label for="password">Password</label>
             <div style="position: relative;">
-              <input type="password" id="password" name="password" style="padding-right: 30px;">
+              <input type="password" id="password" name="password" style="padding-right: 30px;" required>
               <i id="togglePassword" class="fa-solid fa-eye" style="position: absolute; right: 10px; top: 45%; transform: translateY(-50%); cursor: pointer;margin-right: 5px;"></i>
             </div>
             <small id="passwordError" style="color: darkred; display: none;margin-left: 10px;font-size: 16px;"> Oops! Your password needs to be at least 8 characters.</small>

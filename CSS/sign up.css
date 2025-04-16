@@ -46,6 +46,7 @@ form .gov {
   align-items: center;
   width: 100%;
   gap: 20px;
+  flex-wrap: wrap;
 }
 form .gov label {
   display: flex;

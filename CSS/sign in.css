@@ -85,15 +85,21 @@ input:focus{
 
 .rembmerMe {
     accent-color: var(--subColor);
-    font-size: 10px;
+}
+
+.rembmerMe:focus {
+    transform: translateY(0px);
 }
 
 
-
-.forgot-password {
-    color: #333;
+.create-acc {
+    color: var(--subColor);
+}
+.create-acc a{
+    color: var(--subColor);
     text-decoration: underline;
-    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .login {

@@ -43,7 +43,7 @@ body {
 
 /* ---------------------- Header Styles ----------------------- */
 header {
-    padding: 0px 0;
+    padding: 0 0;
     position: relative;
 }
 header .container {
@@ -124,7 +124,7 @@ header nav ul li a:hover {
 footer {
     background-color: var(--subColor);
     color: var(--mainColor);
-    padding: 20px 0 0 0;
+    padding: 0 0 0 0;
 }
 
 .footer {
@@ -136,7 +136,7 @@ footer {
 }
 
 .footer .logo-container img {
-    width: 300px;
+    width: 270px;
     height: auto;
 }
 
@@ -149,10 +149,11 @@ footer {
     text-align: center;
     font-size: 20px;
     padding: 0 100px 20px;
+    margin-top: 30px;
 }
 
 .ps p {
-    margin: 8px 0;
+    margin: 20px 0;
 }
 
 /* -------------------------------- Responsive Design -------------------------------- */

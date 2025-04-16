@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -10,15 +10,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 20px;
+    padding: 50px 10px;
     min-height: 70vh;
-    max-width:1160px ;
+    max-width:1200px ;
     margin: 0 auto;
 }
 
 .main {
     max-width: 45%;
-    margin-left: 40px;
+    margin-left: 10px;
 }
 
 .main h1 {
@@ -38,7 +38,6 @@
 .main p {
     font-size: 20px;
     margin-bottom: 30px;
-    /* font-weight: bold; */
     line-height: 1.6;
 }
 
@@ -54,6 +53,7 @@
     transition: all 0.3s ease;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 
 .main button i {
     margin-left: 7px;

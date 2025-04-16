@@ -35,22 +35,22 @@
             <div class="login-form">
                 <div class="form">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form">
                     <label for="password">Password</label>
                     <div style="position: relative;">
-                    <input type="password" id="password" name="password" style="padding-right: 30px;">
+                    <input type="password" id="password" name="password" style="padding-right: 30px;" required>
                     <i id="togglePassword" class="fa-solid fa-eye" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;margin-right: 5px;"></i>
                     </div>
                 </div>
                 <div class="remember">
                     <label class="l5">
                         <p class="me">
-                        <input type="checkbox" name="remember me" class="rembmerMe">
+                        <input type="checkbox" name="remember me" class="rembmerMe" >
                         &nbsp;Remember me</p>
                     </label>
-                    <a href="#" class="forgot-password">Forget Password</a>
+                    <p class="create-acc">Don't have an account ? <a href="#">Sign up now!</a></p>
                 </div>
                 <button type="submit" class="login">Login</button>
             </div>
