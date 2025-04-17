@@ -1,0 +1,180 @@
+.about-section {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    color: var(--subColor, #333);
+    padding-right: 30px;
+    position: relative;
+}
+
+.about h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.sec h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin: 1.5rem 0;
+    color: var(--subColor, #333);
+    font-weight: bold;
+}
+
+.sec span {
+    display: block;
+}
+
+.p2 {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #432212;
+    margin-top: 20px;
+}
+
+.secimg {
+    position: relative;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secimg img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    border-radius: 13px;
+    object-fit: cover;
+}
+
+.text2 {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background-color: rgba(240, 235, 230, 0.7);
+    color: #432212;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.text1 {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    background-color: rgba(240, 235, 230, 0.7);
+    color: #432212;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 80%;
+}
+
+/* Large screens */
+@media screen and (max-width: 1200px) {
+    .sec h2 {
+        font-size: 42px;
+    }
+}
+
+/* Medium screens */
+@media screen and (max-width: 992px) {
+    .about {
+        padding-right: 20px;
+    }
+    
+    .sec h2 {
+        font-size: 36px;
+    }
+    
+    .p2 {
+        font-size: 16px;
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+    
+    .about, .secimg {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .about {
+        margin-bottom: 40px;
+        order: 2;
+        align-items: center;
+        justify-content: center;
+    }
+    .sec h2 {
+        text-align: center;
+    }
+    
+    .p2 {
+        text-align: center;
+    }
+    
+    .secimg {
+        order: 1;
+    }
+    
+    .text1, .text2 {
+        font-size: 1rem;
+    }
+    .secimg img {
+        width: 100%;
+        height: auto;
+        max-height: 400px; 
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .about h1 {
+        font-size: 28px;
+    }
+    
+    .sec h2 {
+        font-size: 32px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+    
+    .p2 {
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    /* .text1, .text2 {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    } */
+}
