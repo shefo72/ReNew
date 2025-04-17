@@ -51,7 +51,9 @@ form .gov {
 form .gov label {
   display: flex;
 }
-
+form select {
+  cursor: pointer;
+}
 
 form input, form select {
   padding: 12px;
@@ -71,14 +73,14 @@ input[type="name"],
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-    width: 100%;
-    font-size: 16px;
-    background-color: #f7f3f0;
-    border-radius: 10px;
-    padding: 13px 9px;
-    color: black;
-    transition: all 0.3s ease;
-    border: 2px solid var(--subColor);
+  width: 100%;
+  font-size: 16px;
+  background-color: #f7f3f0;
+  border-radius: 10px;
+  padding: 13px 9px;
+  color: black;
+  transition: all 0.3s ease;
+  border: 2px solid var(--subColor);
 }
 
 .Terms {
