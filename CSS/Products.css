@@ -59,12 +59,29 @@ input:focus {
    width: 100%;
    height: 250px;
    object-fit: cover;
-   margin-bottom: 15px;
+   margin-bottom: 5px;
    transition-duration: 0.3s;
 }
 
 .product-item .img:hover img {
    transform: scale(1.05);
+}
+
+/* details */
+.details  {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   background-color: #C7804569;
+   margin-bottom: 5px;
+   border-radius: 5px;
+   padding: 5px;
+   color: black;
+   font-weight: bold;
+   gap: 10px;
+   flex-direction: column-reverse;
+   align-items: center;
+   border: 1px solid black;
 }
 
 .button-group {
