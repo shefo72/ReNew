@@ -70,20 +70,19 @@ input:focus {
 /* details */
 .details  {
    display: flex;
-   justify-content: center;
+   justify-content: space-between;
    width: 100%;
    background-color: #C7804569;
    margin-bottom: 5px;
    border-radius: 5px;
-   padding: 5px;
+   padding: 8px 15px;
    color: black;
    font-weight: bold;
    gap: 10px;
-   flex-direction: column-reverse;
+   flex-direction: row-reverse;
    align-items: center;
    border: 1px solid black;
 }
-
 .button-group {
    display: flex;
    gap: 10px;

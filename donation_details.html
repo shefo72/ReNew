@@ -23,9 +23,9 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Products.html">Products</a></li>
                     <li><a href="donate.html"></i>Donation</a></li>
-                    <li><a href="aboutus.html"></i>About Us</a></li>
                     <li><a href="myorder.html"></i>My orders</a></li>
-                    <li><a href="">Wish List</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                    <li><a href="aboutus.html"></i>About Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -69,8 +69,8 @@
             </div>
             <div class="group">
                 <label for="upload">Upload Image</label>
-                <input class="upload-img" type="file" id="imageUpload" accept="image/*" onchange="upload()" />
-                <div id="preview"></div>
+                <input type="file" id="imageUpload" accept="image/*" multiple>
+                <div id="preview" style="display: flex; flex-wrap: wrap;"></div>
             </div>
         </div>
     </div>
@@ -88,30 +88,6 @@
     </div>
 </footer>
 <script src="JS/global.js"></script>
-<script>
-
-    // upload image and display it 
-    // "need improvement --> user can upload only one img and can't remove "
-    function upload() {
-        const input = document.getElementById('imageUpload');
-        const file = input.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(img) {
-                const preview = document.getElementById('preview');
-                preview.innerHTML = `<img src="${img.target.result}" alt="Furniture Img" width="250" />`;
-            }
-            reader.readAsDataURL(file);
-        }
-    }
-
-    // to select one condition for furniture 
-    function selectCondition(button) {
-        const buttons = document.querySelectorAll('.condition-btn');
-        buttons.forEach(btn => btn.classList.remove('selected'));
-        button.classList.add('selected');
-    }
-</script>
-
+<script src="JS/donation_details.js"></script>
 </body>
 </html>

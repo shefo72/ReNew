@@ -10,7 +10,7 @@ function addProductItem(imageSrc, name = " need edit ya negm " ,price = 5) {
                 <p class="title">${name}</p>
             </div>
         <div class="button-group">
-            <button class="add">Add to cart</button>
+            <button class="add" onclick="addToCart('${imageSrc}', '${price}', '${name}')">Add to cart</button>
             <button class="buy">Buy Now!</button>
         </div>
     `;
@@ -26,4 +26,14 @@ addProductItem("Media/Products/image 4.jpg", "Vintage Armchair" , 6800)
 addProductItem("Media/Products/image 5.jpg", "Vintage Armchair" , 6000)
 addProductItem("Media/Products/image 6.jpg", "Vintage Armchair" , 6200)
 addProductItem("Media/Products/image 3.png", "Vintage Armchair" , 6500)
+
+
+
+// 
+function addToCart(imageSrc, price, name) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ imageSrc, price, name });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert("Added to cart");
+}
 
