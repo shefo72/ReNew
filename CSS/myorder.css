@@ -128,3 +128,53 @@
    border-radius: 5px;
    cursor: pointer;
 }
+
+/* if cart was empty */
+
+.empty {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: #333;
+   text-align: center;
+   width: 80%;
+   padding: 40px 20px;
+   margin: 0 auto;
+   margin-bottom: 50px;
+   margin-top: 80px;
+}
+
+.empty i {
+   font-size: 200px;
+   margin-bottom: 10px;
+}
+.empty h2 {
+   font-size: 70px;
+   margin-bottom: 20px;
+}
+
+.empty p {
+   font-size: 25px;
+   margin-bottom: 5px;
+}
+
+
+.empty  button {
+   background-color: var(--accentColor);
+   color: white;
+   border: none;
+   padding: 5px 10px;
+   font-size: 16px;
+   cursor: pointer;
+   font-weight: bold;
+   border-radius: 5px;
+   transition: all 0.3s ease;
+   margin-top: 10px;
+}
+
+
+.empty p button:hover{
+   background-color: var(--subColor);
+   transform: translateY(-1px);
+}

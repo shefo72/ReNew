@@ -19,17 +19,24 @@ function addProductItem(imageSrc, name = " need edit ya negm " ,price = 5) {
 }
 
 // call function and add items
-addProductItem("Media/Products/image 1.png", "Vintage Armchair" , 5000)
+addProductItem("Media/Products/image 1.png", "Vintage Armchair" , 4000)
 addProductItem("Media/Products/image 2.png", "Vintage Armchair" , 6000)
 addProductItem("Media/Products/image 3.png", "Vintage Armchair" , 4000)
 addProductItem("Media/Products/image 4.jpg", "Vintage Armchair" , 6800)
 addProductItem("Media/Products/image 5.jpg", "Vintage Armchair" , 6000)
 addProductItem("Media/Products/image 6.jpg", "Vintage Armchair" , 6200)
-addProductItem("Media/Products/image 3.png", "Vintage Armchair" , 6500)
+addProductItem("Media/Products/image 7.png", "Vintage Armchair" , 3500)
+addProductItem("Media/Products/image 8.png", "Vintage Armchair" , 6000)
+addProductItem("Media/Products/image 9.png", "Vintage Armchair" , 8000)
+addProductItem("Media/Products/image 10.png", "Vintage Armchair" , 5000)
+addProductItem("Media/Products/image 3.png", "Vintage Armchair" , 4000)
+addProductItem("Media/Products/image 11.png", "Vintage Armchair" , 4000)
 
 
 
-// 
+
+
+// store data for my order page
 function addToCart(imageSrc, price, name) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push({ imageSrc, price, name });
