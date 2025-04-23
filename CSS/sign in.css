@@ -81,6 +81,8 @@ input:focus{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .rembmerMe {
@@ -94,6 +96,8 @@ input:focus{
 
 .create-acc {
     color: var(--subColor);
+    padding-left: 10px;
+    margin-bottom: 8px;
 }
 .create-acc a{
     color: var(--subColor);

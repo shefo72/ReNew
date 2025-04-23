@@ -90,25 +90,9 @@ input:focus {
 }
 
 .add {
-   background-color: rgb(250, 239, 204);
-   padding: 8px 16px;
-   border-radius: 8px;
-   cursor: pointer;
-   color: #8aa8ab;
-   width: 100%;
-   transition: all 0.3s ease;
-   font-size: 18px;
-   border: 1px solid black;
-}
-
-.add:hover {
-   background-color: rgb(250, 230, 165);
-}
-
-.buy {
-   border: solid 1px #e0e0e0;
-   background-color: #8aa8ab;
-   color: white;
+   border: solid 1px #000000;
+   background-color: #8FC6C166;
+   color: black;
    padding: 8px 18px;
    border-radius: 8px;
    cursor: pointer;
@@ -117,9 +101,11 @@ input:focus {
    transition: all 0.3s ease;
 }
 
-.buy:hover {
-   background-color: #3cb3ebb7;
+.add:hover {
+   background-color: #8aa8ab;
+   color: white;
 }
+
 
 .button{
    display: flex;
@@ -127,7 +113,8 @@ input:focus {
    justify-content: center;
    margin: 70px 0;
 }
-.toDonation {
+
+.buy {
    background-color: var(--accentColor);
    color: white;
    border: none;
@@ -138,8 +125,10 @@ input:focus {
    border-radius: 13px;
    transition: all 0.3s ease;
 }
-
-.toDonation:hover {
+.buy i {
+   margin-left: 5px;
+}
+.buy:hover {
    background-color: var(--subColor);
    transform: translateY(-3px);
 }
@@ -171,16 +160,12 @@ input:focus {
       height: 400px; 
 }
 
-   .Search {
-      position: static;
-      margin-bottom: 30px;
-   }
 
    input {
       max-width: 100%;
    }
 
-   .toDonation {
+   .buy {
       width: 100%;
       position: static;
       margin-top: 30px;

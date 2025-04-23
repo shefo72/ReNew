@@ -101,6 +101,9 @@
    margin-bottom: 50px;
    margin-top: 50px;
 }
+.order button i{
+   margin-left: 5px;
+}
 
 .order button:hover {
    background-color: var(--subColor);
@@ -127,6 +130,11 @@
    padding: 5px 10px; 
    border-radius: 5px;
    cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.remove:hover {
+   background-color: #cc1010;
 }
 
 /* if cart was empty */

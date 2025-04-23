@@ -121,16 +121,18 @@
                     </div>
                     
                     <div class="card1">
+                        <label class="card" for="cardNumber">Name on card</label>
+                        <input type="text" required class="cardbox" id="cardNumber">
                         <label class="card" for="cardNumber">Card Number</label>
                         <input type="text" required class="cardbox" id="cardNumber">
                         
                         <div class="dd">
-                            <div class="cc">
-                                <label class="Expiration" for="expirationDate">Expiration Date</label>
+                            <div class="expirDate">
+                                <label class="Expiration" for="expirationDate">Expiry Date</label>
                                 <input type="date" required class="Expirationbox" id="expirationDate">
                             </div>
-                            <div style="display: flex; flex-direction: column;">
-                                <label class="cvv" for="cvvNumber">CVV</label>
+                            <div class="ccv">
+                                <label for="cvvNumber">CVV</label>
                                 <input type="" required class="cvvbox" id="cvvNumber">
                             </div>
                         </div>
@@ -164,5 +166,6 @@
 </footer>
 
 <script src="JS/global.js"></script>
+<script src="JS/payment.js"></script>
 </body>
 </html>

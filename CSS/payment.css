@@ -57,15 +57,30 @@
 
 .dd {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 30px;
+    width: 100%;
 }
-.cc {
+.expirDate {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
+
+.ccv {
+    display:flex ;
+    flex-direction: column;
+    width: 50%;
+}
+
+.ccv label {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: rgb(41, 38, 38);
+    display: block;
+    margin-bottom: 10px;
+}
+
 
 .flip-card {
     background-color: transparent;

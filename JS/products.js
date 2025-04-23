@@ -11,7 +11,6 @@ function addProductItem(imageSrc, name = " need edit ya negm " ,price = 5) {
             </div>
         <div class="button-group">
             <button class="add" onclick="addToCart('${imageSrc}', '${price}', '${name}')">Add to cart</button>
-            <button class="buy">Buy Now!</button>
         </div>
     `;
 
@@ -19,18 +18,28 @@ function addProductItem(imageSrc, name = " need edit ya negm " ,price = 5) {
 }
 
 // call function and add items
-addProductItem("Media/Products/image 1.png", "Vintage Armchair" , 4000)
-addProductItem("Media/Products/image 2.png", "Vintage Armchair" , 6000)
-addProductItem("Media/Products/image 3.png", "Vintage Armchair" , 4000)
-addProductItem("Media/Products/image 4.jpg", "Vintage Armchair" , 6800)
-addProductItem("Media/Products/image 5.jpg", "Vintage Armchair" , 6000)
-addProductItem("Media/Products/image 6.jpg", "Vintage Armchair" , 6200)
-addProductItem("Media/Products/image 7.png", "Vintage Armchair" , 3500)
-addProductItem("Media/Products/image 8.png", "Vintage Armchair" , 6000)
-addProductItem("Media/Products/image 9.png", "Vintage Armchair" , 8000)
-addProductItem("Media/Products/image 10.png", "Vintage Armchair" , 5000)
-addProductItem("Media/Products/image 3.png", "Vintage Armchair" , 4000)
-addProductItem("Media/Products/image 11.png", "Vintage Armchair" , 4000)
+addProductItem("Media/Products/1.jpg", "Industrial Side Table", 4500);
+addProductItem("Media/Products/2.jpg", "Vintage Desk", 4000);
+addProductItem("Media/Products/3.jpg", "Armchair", 5000);
+addProductItem("Media/Products/4.jpg", "Armchair Chair", 3000);
+addProductItem("Media/Products/5.jpg", "Rustic Dining Table", 3500);
+addProductItem("Media/Products/6.jpg", "Wing chair", 7000);
+addProductItem("Media/Products/7.jpg", "Vintage Armchair", 4500);
+addProductItem("Media/Products/8.jpg", "Modern Bookshelf", 4000);
+addProductItem("Media/Products/9.jpg", "Modern Sofa", 9000);
+addProductItem("Media/Products/10.jpg", "Bedside Table", 4500);
+addProductItem("Media/Products/11.jpg", "Rustic Chair", 6000);
+addProductItem("Media/Products/12.jpg", "Wardrobe", 9000);
+addProductItem("Media/Products/13.jpg", "Buffet", 4000);
+addProductItem("Media/Products/14.jpg", "Classic TV Stand", 6000);
+addProductItem("Media/Products/15.jpg", "Industrial Side Table", 3500);
+addProductItem("Media/Products/16.jpg", "Sideboard", 5500);
+addProductItem("Media/Products/17.jpg", "Armchair, Nordla green", 7500);
+addProductItem("Media/Products/18.jpg", "Nightstand", 6500);
+addProductItem("Media/Products/19.jpg", "Bedside table", 3000);
+addProductItem("Media/Products/20.jpg", "Dining Chairs", 6000);
+addProductItem("Media/Products/21.jpg", "Minimalist Bookshelf", 4500);
+
 
 
 
