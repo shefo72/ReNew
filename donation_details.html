@@ -31,49 +31,64 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="left-column">
-            <div class="group">
-                <label for="donor-name">Donor's name</label>
-                <input type="text" id="donor-name" required>
-            </div>
-            
-            <div class="group">
-                <label for="phone-number">Phone Number</label>
-                <input type="tel" id="phone-number" required>
-            </div>
-            
-            <div class="group">
-                <label>Condition</label>
-                <div class="condition-group">
-                    <button class="condition-btn" onclick="selectCondition(this)">New</button>
-                    <button class="condition-btn" onclick="selectCondition(this)">Old</button>
-                    <button class="condition-btn" onclick="selectCondition(this)">Damaged</button>
+    <form id="donationForm">
+        <div class="container">
+            <div class="left-column">
+                <div class="group">
+                    <label for="donor-name">Donor's name</label>
+                    <input type="text" id="donor-name" required />
+                </div>
+                
+                <div class="group">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" id="phone-number" required />
+                </div>
+                
+                <div class="group">
+                    <label>Condition</label>
+                    <div class="condition-group">
+                        <button type="button" class="condition-btn" onclick="selectCondition(this)">New</button>
+                        <button type="button" class="condition-btn" onclick="selectCondition(this)">Old</button>
+                        <button type="button" class="condition-btn" onclick="selectCondition(this)">Damaged</button>
+                    </div>
+                    <input type="hidden" id="condition" required />
+                </div>
+                
+                <div class="group">
+                    <label for="Description">Description</label>
+                    <textarea id="Description" name="Description" rows="4" required placeholder="Please describe your product"></textarea>
                 </div>
             </div>
-            <div class="group">
-                <label for="Description">Description</label>
-                <textarea id="Description" name="Description" rows="4" placeholder="Please describe your product" required></textarea>
+            
+            <div class="right-column">
+                <div class="Type">
+                    <label for="Type">Furniture Type</label>
+                    <select id="Type" name="Type" class="select" required>
+                        <option value="">-- Furniture Type --</option>
+                        <option value="Beds">Beds</option>
+                        <option value="Couches">Couches</option>
+                        <option value="Tables">Tables</option>
+                        <option value="Office furniture">Office furniture</option>
+                    </select>
+                </div>
+                
+                <div class="group">
+                    <label for="imageUpload">Upload Image</label>
+                    <input type="file" id="imageUpload" accept="image/*" multiple required />
+                    <div id="preview" style="display: flex; flex-wrap: wrap;"></div>
+                </div>
+                <button type="submit" class="submit">Submit</button>
             </div>
         </div>
-        <div class="right-column">
-            <div class="Type">
-                <label for="Type">Furniture Type</label>
-                <select id="Type" name="Type" class="select">
-                <option value="">-- Furniture Type --</option>
-                <option value="Beds">Beds</option>
-                <option value="Couches">Couches</option>
-                <option value="Tables">Tables</option>
-                <option value="Office furniture">Office furniture</option>
-                </select>
-            </div>
-            <div class="group">
-                <label for="upload">Upload Image</label>
-                <input type="file" id="imageUpload" accept="image/*" multiple>
-                <div id="preview" style="display: flex; flex-wrap: wrap;"></div>
+        
+        </form>
+        <div class="modal" id="successModal">
+            <div class="submited">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-xmark" id="close"></i> 
+                <p id="successMsg">Thank you! Your data was submitted successfully.</p>
             </div>
         </div>
-    </div>
 
 <footer>
     <div class="footer">
