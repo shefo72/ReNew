@@ -324,3 +324,38 @@
    margin: 0 50px;
    color: #000;
 }
+
+@media screen and (max-width: 768px) {
+   .modal .summary {
+      width: 90%;
+      max-width: 600px;
+   }
+   .modal .summary .head h3 {
+      font-size: 25px;
+   }
+   .modal .summary .calc div p,
+   .modal .summary .items p{
+      font-size: 22px;
+   }
+   .modal .summary .total p {
+      font-size: 24px;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .modal .summary {
+      width: 92%;
+      max-width: 400px;
+   }
+   .modal .summary .head h3 {
+      font-size: 20px;
+   }
+   .modal .summary .items p,
+   .modal .summary .calc div p {
+      font-size: 18px;
+   }
+   .modal .summary .total p {
+      font-size: 20px;
+   }
+}
+
