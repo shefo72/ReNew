@@ -30,20 +30,20 @@
             </nav>
         </div>
     </header>
-<section class="sec">
-    <div class="seccon">
-        <h1>Give<span style="display: block;">Your Old Furniture</span><span style="display: block;">a New Purpose</span></h1>
-        <p>Donate your used furniture and help give it <br>a second life for those in need.</p>
-        <div class="tom">
-            <button onclick="window.location.href='donation_details.html'">Donate Now <i class="fa-solid fa-heart"></i></button>
+    <section class="sec">
+        <div class="seccon hidden">
+            <h1>Give<span style="display: block;">Your Old Furniture</span><span style="display: block;">a New Purpose</span></h1>
+            <p>Donate your used furniture and help give it <br>a second life for those in need.</p>
+            <div class="tom">
+                <button onclick="window.location.href='donation_details.html'">Donate Now <i class="fa-solid fa-heart"></i></button>
+            </div>
         </div>
-    </div>
-    
-    <div class="secimg">
-        <img src="Media/donate 1.png" alt="Furniture donation image">
-        <img src="Media/donate 2.png" alt="Furniture donation image">
-    </div>
-</section>
+        
+        <div class="secimg">
+            <img src="Media/donate 1.png" alt="Furniture donation image">
+            <img src="Media/donate 2.png" alt="Furniture donation image">
+        </div>
+    </section>
 <footer>
     <div class="footer">
         <div class="logo-container">
@@ -57,5 +57,12 @@
     </div>
 </footer>
 <script src="JS/global.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        const main = document.querySelector('.seccon');
+        main.classList.remove('hidden');
+        main.classList.add('show');
+    });
+</script>
 </body>
 </html>

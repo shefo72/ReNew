@@ -18,6 +18,17 @@
 .seccon {
     max-width: 50%;
     margin-left: 10px;
+    transition: all 1s ease;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .seccon h1 {

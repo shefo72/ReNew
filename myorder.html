@@ -40,14 +40,22 @@
         <div id="orderContainer" class="image-container"></div>
     <!-- Make Order Button -->
     <div class="order">
-        <button id="orderSummary">Order Summary <i class="fa-solid fa-clipboard-list"></i> </button>
-        <button onclick="window.location.href='payment.html'">Pay Now <i class="fa-solid fa-credit-card"></i></button>
+        <button id="orderSummary" class="pay">
+            <span class="text">Order Summary</span>
+            <i class="fa-solid fa-clipboard-list icon"></i> 
+            <span class="circle"></span>
+        </button>
+        <button class="pay" onclick="window.location.href='payment.html'">
+            <span class="text">Pay Now</span>
+            <i class="fa-solid fa-credit-card icon"></i>
+            <span class="circle"></span>
+        </button>
     </div>
     <div class="modal" id="modal">
         <div class="summary">
             <i class="fa-solid fa-xmark" id="close"></i>
             <div class="head">
-                <img src="/Media/summary.png" alt="">
+                <img src="Media/summary.png" alt="">
                 <h3>Order Summary </h3>
             </div>
             <div class="items">

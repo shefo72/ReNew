@@ -32,11 +32,16 @@
     </header>
 
     <section class="sec">
-        <div class="main">
+        <div class="main hidden">
             <h1>Give<span style="display: block;">Your Old Furniture</span><span style="display: block;">a New Life</span></h1>
             <h3>Recycle With creativity!</h3>
             <p>Instead of throwing away your old furniture, transform it! Discover creative ideas, useful tips, and expert services to turn your pieces into unique, sustainable designs.</p>
-            <button onclick="window.location.href='sign in.html'">Get Started Now<i class="fa-solid fa-arrow-right"></i></button>
+            <button class="animated-button" onclick="window.location.href='sign in.html'">
+                <i class="fa-solid fa-arrow-right arr-2"></i>
+                <span class="text">Get Started Now</span>
+                <span class="circle"></span>
+                <i class="fa-solid fa-arrow-right arr-1"></i>
+            </button>
         </div>
         <div class="right-img">
             <img src="Media/home.png" alt="Furniture recycling"/>
@@ -56,5 +61,12 @@
         </div>
     </footer>
     <script src="JS/global.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            const main = document.querySelector('.main');
+            main.classList.remove('hidden');
+            main.classList.add('show');
+        });
+    </script>
 </body>
 </html>

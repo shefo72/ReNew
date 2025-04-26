@@ -10,7 +10,7 @@ function addProductItem(imageSrc, name = " need edit ya negm " ,price = 5) {
                 <p class="title">${name}</p>
             </div>
         <div class="button-group">
-            <button class="add" onclick="addToCart('${imageSrc}', '${price}', '${name}')">Add to cart</button>
+            <button class="add" onclick="addToCart('${imageSrc}', '${price}', '${name}')">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
         </div>
     `;
 
