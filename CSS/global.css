@@ -60,7 +60,7 @@ header .logo img {
 header nav {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-right: 100px;
 }
 .no-bullets {
@@ -159,25 +159,7 @@ footer {
 
 /* -------------------------------- Responsive Design -------------------------------- */
 
-@media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-
-    header .container {
-        flex-wrap: wrap;
-    }
-    
-    header .logo {
-        order: 1;
-    }
-    
-    .mobile-menu-btn {
-        order: 2;
-        margin-right: 20px;
-    }
-
+@media (max-width: 990px)  {
     header nav {
         position: absolute;
         top: 100%;
@@ -196,7 +178,22 @@ footer {
         order: 3;
         width: 100%;
     }
+    .mobile-menu-btn {
+        display: block;
+    }
 
+    header .container {
+        flex-wrap: wrap;
+    }
+    
+    header .logo {
+        order: 1;
+    }
+    
+    .mobile-menu-btn {
+        order: 2;
+        margin-right: 20px;
+    }
     header nav.active {
         max-height: 500px;
         padding: 20px; 
@@ -229,7 +226,8 @@ footer {
         margin-right: 0;
         margin-bottom: 0;
     }
-
+}
+@media (max-width: 768px) {
 
     .footer {
         flex-direction: column;
@@ -246,6 +244,7 @@ footer {
 @media (max-width: 480px) {
     .footer .logo-container img {
         width: 150px;
+        margin-top: 10px;
     }
 
     .ps {
