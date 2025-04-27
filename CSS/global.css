@@ -28,17 +28,18 @@ body {
     background:var(--accentColor);
 }
 
-/* Style of Scrollbar
+/* Style of Scrollbar*/
+
 ::-webkit-scrollbar {
     width: 10px;
 }
 ::-webkit-scrollbar-track{
-    background-color: var(--accentColor);
+    background-color: #beb1a3;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(29, 29, 29);
-    border-radius: 12px;
-} */
+    background-color: #432212;
+    border-radius: 12px;
+}
 
 
 /* ---------------------- Header Styles ----------------------- */
