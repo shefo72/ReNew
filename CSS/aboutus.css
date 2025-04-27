@@ -24,6 +24,15 @@
     color: var(--subColor, #333);
     padding-right: 30px;
     position: relative;
+    transition: all 1s ease;
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(100px);
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .about h1 {

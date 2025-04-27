@@ -104,6 +104,12 @@ input:focus{
     text-decoration: underline;
     margin-bottom: 20px;
     font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.create-acc a:hover {
+    text-decoration: none;
+    color: darkred;
 }
 
 .login {
@@ -158,4 +164,27 @@ input:focus{
         width: 100%;
         max-width: none;
     }
+}
+
+/* password error */
+
+#passwordError {
+    color: #8c0000;
+    font-size: 18px;
+    margin-top: 10px;
+    display: none;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+
+/* password display */
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 45%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    margin-right: 5px;
 }

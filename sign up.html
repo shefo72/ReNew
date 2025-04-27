@@ -32,7 +32,6 @@
 </header>
 
   <main>
-
     <div class="container">
       <div class="left">
         <img src="Media/sign up.png" alt="Furniture Background" />
@@ -54,25 +53,26 @@
 
           <!-- phone number -->
           <div class="input">
-            <label class="phone">Phone number</label>
-            <input type="text" id="phone" name="phone" required />
-          </div>
+            <label class="phone" for="phone">Phone number</label>
+            <input type="text" id="phone" name="phone" required maxlength="11" />
+            <div id="phoneError" class="error">Please enter a valid 11-digit phone number</div>
+        </div>
 
           <!-- Password -->
           <div class="input">
             <label for="password">Password</label>
             <div style="position: relative;">
               <input type="password" id="password" name="password" style="padding-right: 30px;" required>
-              <i id="togglePassword" class="fa-solid fa-eye" style="position: absolute; right: 10px; top: 45%; transform: translateY(-50%); cursor: pointer;margin-right: 5px;"></i>
+              <i id="togglePassword" class="fa-solid fa-eye"></i>
             </div>
-            <small id="passwordError" style="color: darkred; display: none;margin-left: 10px;font-size: 16px;"> Oops! Your password needs to be at least 8 characters.</small>
+            <small id="passwordError"> Oops! Your password needs to be at least 8 characters.</small>
           </div>
 
           <!--governorate -->
           <div class="gov">
           <label for="governorate">Choose your governorate:</label>
-          <select id="governorate" name="governorate">
-            <option value="">-- Select Governorate --</option>
+          <select id="governorate" name="governorate" required>
+            <option value="">-- Select Governorate --</option >
             <option value="Cairo">Cairo</option>
             <option value="Giza">Giza</option>
             <option value="Alexandria">Alexandria</option>
@@ -105,7 +105,7 @@
 
           <!-- Terms & Conditions -->
           <div class="Terms">
-            <input type="checkbox" id="remember" />
+            <input type="checkbox" id="remember" required />
             <label for="remember">
               I have read and agree to the 
               <a href="#" id="openModal">Terms & Conditions</a>

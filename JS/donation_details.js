@@ -22,14 +22,10 @@
         });
     });
     
-    // ارسال البيانات باستخدام fetch
+
     document.getElementById("donationForm").addEventListener("submit", async function(e) {
         e.preventDefault();
-    
         const formData = new FormData(this);
-    
-
-    
         try {
         const response = await fetch('https://your-api.com/submit', {
             method: 'POST',
@@ -54,10 +50,32 @@
     });
 
 
-
     // to select one condition for furniture 
     function selectCondition(button) {
         const buttons = document.querySelectorAll('.condition-btn');
         buttons.forEach(btn => btn.classList.remove('selected'));
         button.classList.add('selected');
     }
+
+
+    // make sure that phone number == 11ch
+    const phoneInput = document.getElementById('phone-number');
+    phoneInput.addEventListener('input', function(e) {
+    this.value = this.value.replace(/\D/g, '');
+    if (this.value.length === 11) {
+        this.style.borderColor = 'green';
+    } else {
+        this.style.borderColor = '#8c0000';
+        this.style.borderWidth = '2px';
+    }
+    });
+    phoneInput.addEventListener('invalid', function(e) {
+    if (this.validity.patternMismatch || this.validity.valueMissing) {
+        this.setCustomValidity('Please enter exactly 11 digits for phone number');
+    } else {
+        this.setCustomValidity('');
+    }
+    });
+    phoneInput.addEventListener('input', function(e) {
+    this.setCustomValidity('');
+    });

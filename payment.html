@@ -120,37 +120,39 @@
                         </div>
                     </div>
                     
-                    <div class="card1">
-                        <label class="card" for="cardNumber">Name on card</label>
-                        <input type="text" required class="cardbox" id="cardNumber">
-                        <label class="card" for="cardNumber">Card Number</label>
-                        <input type="text" required class="cardbox" id="cardNumber">
-                        
-                        <div class="dd">
-                            <div class="expirDate">
-                                <label class="Expiration" for="expirationDate">Expiry Date</label>
-                                <input type="date" required class="Expirationbox" id="expirationDate">
-                            </div>
-                            <div class="ccv">
-                                <label for="cvvNumber">CVV</label>
-                                <input type="" required class="cvvbox" id="cvvNumber">
+                    <form action="submit">
+                        <div class="card1">
+                            <label class="card" for="cardNumber">Card Number</label>
+                            <input type="text" required class="cardbox" id="cardNumber" maxlength="16">
+                            <div id="cardError" class="error">Please enter exactly 16 digits (numbers only).</div>
+                            
+                            <div class="dd">
+                                <div class="expirDate">
+                                    <label class="Expiration" for="expirationDate">Expiry Date</label>
+                                    <input type="date" required class="Expirationbox" id="expirationDate">
+                                </div>
+                                <div class="ccv">
+                                    <label for="cvvNumber">CVV</label>
+                                    <input type="text" required class="cvvbox" id="cvvNumber" maxlength="3">
+                                    <div id="cvvError" class="error">Please enter exactly 3 digits for CVV.</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="savecard">
-                        <input id="save" type="checkbox" name="sav" class="check">
-                        <label for="save">Save card details</label>
-                    </div>
-                    
-                    <div class="paynow">
-                        <button class="pay">
-                            <span class="btn-text">Pay Now</span>
-                            <i class="fa-solid fa-receipt"></i>
-                            <span class="pulse-effect"></span>
-                            <span class="hover-effect"></span>
-                        </button> 
-                    </div>
+                        
+                        <div class="savecard">
+                            <input id="save" type="checkbox" name="sav" class="check">
+                            <label for="save">Save card details</label>
+                        </div>
+                        
+                        <div class="paynow">
+                            <button class="pay">
+                                <span class="btn-text">Pay Now</span>
+                                <i class="fa-solid fa-receipt"></i>
+                                <span class="pulse-effect"></span>
+                                <span class="hover-effect"></span>
+                            </button> 
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

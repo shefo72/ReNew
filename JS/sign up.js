@@ -29,6 +29,7 @@ if (event.target == modal) {
 }
 }
 
+
 // Password must be 8ch at least
 function validatePassword() {
     const password = document.getElementById("password").value;
@@ -41,3 +42,26 @@ function validatePassword() {
         return true; 
     }
 }
+
+
+// phone number must be 11ch && only number
+const phoneInput = document.getElementById('phone');
+const phoneError = document.getElementById('phoneError');
+phoneInput.addEventListener('input', function(e) {
+    this.value = this.value.replace(/\D/g, '');
+        if (this.value.length === 11) {
+        this.style.borderColor = '#4CAF50';
+        phoneError.style.display = 'none';
+    } else {
+        this.style.borderColor = this.value.length > 0 ? '#8c0000' : '#ccc';
+        phoneError.style.display = this.value.length > 0 ? 'block' : 'none';
+    }
+});
+phoneInput.form?.addEventListener('submit', function(e) {
+    if (phoneInput.value.length !== 11) {
+        e.preventDefault();
+        phoneError.style.display = 'block';
+        phoneInput.style.borderColor = '#F44336';
+        phoneInput.focus();
+    }
+});
