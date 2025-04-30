@@ -413,3 +413,27 @@
       font-size: 20px;
    }
 }
+
+.summarybtn {
+   background-color: var(--accentColor);
+   color: white;
+   border: none;
+   padding: 13px 30px;
+   font-size: 16px;
+   cursor: pointer;
+   font-weight: bold;
+   border-radius: 13px;
+   width: 90%;
+   min-width: 225px;
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 30px auto 0px;
+}
+
+.summarybtn:hover {
+   transform: translateY(-1px);
+   background-color: var(--subColor);
+}
