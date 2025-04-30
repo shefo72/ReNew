@@ -59,12 +59,12 @@ function updateNavBar() {
     if (status === 'true') {
         nav.innerHTML = `
             <ul class="no-bullets">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/Products.html">Products</a></li>
-                <li><a href="/donate.html">Donation</a></li>
-                <li><a href="/myorder.html">My Orders</a></li>
-                <li><a href="/payment.html">Payment</a></li>
-                <li><a href="/aboutus.html">About Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="donate.html">Donation</a></li>
+                <li><a href="myorder.html">My Orders</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
                 <li><button id="logOut">Log Out <i class="fa-solid fa-arrow-right-from-bracket"></i></button></li>
             </ul>
         `;
@@ -76,11 +76,11 @@ function updateNavBar() {
     } else {
         nav.innerHTML = `
             <ul class="no-bullets">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/Products.html">Products</a></li>
-                <li><a href="/aboutus.html">About Us</a></li>
-                <li><a href="/signin.html">Sign In</a></li>
-                <li><a href="/signup.html">Sign Up</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
             </ul>
         `;
     }
