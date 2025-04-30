@@ -28,18 +28,17 @@ body {
     background:var(--accentColor);
 }
 
-/* Style of Scrollbar*/
-
+/* Style of Scrollbar
 ::-webkit-scrollbar {
     width: 10px;
 }
 ::-webkit-scrollbar-track{
-    background-color: #beb1a3;
+    background-color: var(--accentColor);
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #432212;
-    border-radius: 12px;
-}
+    background-color: rgb(29, 29, 29);
+    border-radius: 12px;
+} */
 
 
 /* ---------------------- Header Styles ----------------------- */
@@ -60,7 +59,7 @@ header .logo img {
 header nav {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-right: 100px;
 }
 .no-bullets {
@@ -159,7 +158,25 @@ footer {
 
 /* -------------------------------- Responsive Design -------------------------------- */
 
-@media (max-width: 990px)  {
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+
+    header .container {
+        flex-wrap: wrap;
+    }
+    
+    header .logo {
+        order: 1;
+    }
+    
+    .mobile-menu-btn {
+        order: 2;
+        margin-right: 20px;
+    }
+
     header nav {
         position: absolute;
         top: 100%;
@@ -178,22 +195,7 @@ footer {
         order: 3;
         width: 100%;
     }
-    .mobile-menu-btn {
-        display: block;
-    }
 
-    header .container {
-        flex-wrap: wrap;
-    }
-    
-    header .logo {
-        order: 1;
-    }
-    
-    .mobile-menu-btn {
-        order: 2;
-        margin-right: 20px;
-    }
     header nav.active {
         max-height: 500px;
         padding: 20px; 
@@ -226,8 +228,7 @@ footer {
         margin-right: 0;
         margin-bottom: 0;
     }
-}
-@media (max-width: 768px) {
+
 
     .footer {
         flex-direction: column;
@@ -244,10 +245,43 @@ footer {
 @media (max-width: 480px) {
     .footer .logo-container img {
         width: 150px;
-        margin-top: 10px;
     }
 
     .ps {
         font-size: 16px;
     }
+
+      color: darkred;
+    }
+
+header nav ul li button {
+    background-color: transparent;
+    color: var(--subColor);
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+header nav ul li button i {
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 15px;
+}
+
+header nav ul li button:hover i {
+    opacity: 1;
+    right: -10px;
+    color: darkred;
+}
+header nav ul li button:hover {
+    color: darkred;
 }

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/signup.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="icon" href="Media/sofa-icon.png">
+    <title>ReNew - Creat New Account</title>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="Media/logo-nav.png" alt="Logo"/>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="mainNav">
+        </nav>
+    </div>
+</header>
+
+  <main>
+    <div class="container">
+      <div class="left">
+        <img src="Media/signup.png" alt="Furniture Background" />
+      </div>
+
+      <div class="right">
+          <form id="signupform" onsubmit="return validatePassword()">
+          <!-- Full name -->
+          <div class="input">
+            <label class="name">Full Name</label>
+            <input type="name" id="name" name="name" required />
+          </div>
+
+          <!-- email -->
+          <div class="input">
+            <label class="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <!-- phone number -->
+          <div class="input">
+            <label class="phone">Phone number</label>
+            <input type="text" id="phone" name="phone" required />
+          </div>
+
+          <!-- Password -->
+          <div class="input">
+            <label for="password">Password</label>
+            <div style="position: relative;">
+              <input type="password" id="password" name="password" style="padding-right: 30px;" required>
+              <i id="togglePassword" class="fa-solid fa-eye" style="position: absolute; right: 10px; top: 45%; transform: translateY(-50%); cursor: pointer;margin-right: 5px;"></i>
+            </div>
+            <small id="passwordError" style="color: darkred; display: none;margin-left: 10px;font-size: 16px;"> Oops! Your password needs to be at least 8 characters.</small>
+          </div>
+
+          <!--governorate -->
+          <div class="gov">
+          <label for="governorate">Choose your governorate:</label>
+          <select id="governorate" name="governorate">
+            <option value="">-- Select Governorate --</option>
+            <option value="Cairo">Cairo</option>
+            <option value="Giza">Giza</option>
+            <option value="Alexandria">Alexandria</option>
+            <option value="Dakahlia">Dakahlia</option>
+            <option value="Red Sea">Red Sea</option>
+            <option value="Beheira">Beheira</option>
+            <option value="Fayoum">Fayoum</option>
+            <option value="Gharbia">Gharbia</option>
+            <option value="Ismailia">Ismailia</option>
+            <option value="Monufia">Monufia</option>
+            <option value="Minya">Minya</option>
+            <option value="Qaliubia">Qaliubia</option>
+            <option value="New Valley">New Valley</option>
+            <option value="Suez">Suez</option>
+            <option value="Aswan">Aswan</option>
+            <option value="Assiut">Assiut</option>
+            <option value="Beni Suef">Beni Suef</option>
+            <option value="Port Said">Port Said</option>
+            <option value="Damietta">Damietta</option>
+            <option value="Sharkia">Sharkia</option>
+            <option value="South Sinai">South Sinai</option>
+            <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+            <option value="Matrouh">Matrouh</option>
+            <option value="Luxor">Luxor</option>
+            <option value="Qena">Qena</option>
+            <option value="North Sinai">North Sinai</option>
+            <option value="Sohag">Sohag</option>
+          </select>
+          </div>
+
+          <!-- Terms & Conditions -->
+          <div class="Terms">
+            <input type="checkbox" id="remember" />
+            <label for="remember">
+              I have read and agree to the 
+              <a href="#" id="openModal">Terms & Conditions</a>
+            </label>
+          </div>
+
+          <!-- Button -->
+          <button type="submit" class="signup">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1><i class="fa-solid fa-circle-exclamation"></i>Terms & Conditions</h1>
+      <p>Welcome to <strong>ReNew</strong>! We help you give your old furniture a second chance. Our team restores your pieces with care and creativity, bringing them back to life. By using our service, you agree to the following terms:</p>
+      <h2><i class="fa-solid fa-calendar"></i>Pickup</h2>
+      <p>We offer scheduled pickups based on availability in your area. Please make sure the furniture is ready and accessible on the agreed day. If the item is too damaged, unsafe to handle, or doesn’t fit our restoration criteria, we may not be able to accept it—but we’ll always explain why.</p>
+    
+      <h2><i class="fa-solid fa-window-restore"></i>Restoration</h2>
+      <p>Each piece is unique, and we restore it using the best methods while keeping its original style. Got special requests? Just tell us—some may cost extra, and we’ll confirm before we start.</p>
+      <h2><i class="fa-solid fa-credit-card"></i>Payment</h2>
+      <p>Our pricing depends on the condition, size, and complexity of the work. A deposit might be required before we begin, and the remaining balance is due when we deliver your restored piece. We’ll always give you a clear quote upfront—no surprises.</p>
+    
+      <h2><i class="fa-solid fa-chair"></i>Responsibility</h2>
+      <p>We handle all furniture with care, but we’re not responsible for any hidden damage or structural issues that existed before restoration. That said, we’ll always keep you informed during the process if we find anything unexpected.</p>
+      <p>Thanks for trusting ReNew with your furniture.We’re excited to bring your pieces back to life!</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer" id="footer">
+    </div>
+</footer>
+
+<script src="JS/global.js"></script>
+<script src="JS/signup.js"></script>
+  </body>
+</html>

@@ -19,14 +19,6 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <nav id="mainNav">
-                <ul class="no-bullets">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Products.html">Products</a></li>
-                    <li><a href="donate.html"></i>Donation</a></li>
-                    <li><a href="myorder.html"></i>My orders</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                    <li><a href="aboutus.html"></i>About Us</a></li>
-                </ul>
             </nav>
         </div>
     </header>
@@ -35,13 +27,13 @@
         <div class="container">
             <div class="left-column">
                 <div class="group">
-                    <label for="donor-name">Donor's name</label>
-                    <input type="text" id="donor-name" required />
+                    <label for="donorName">Donor's name</label>
+                    <input type="text" name="donorName" id="donorName" required />
                 </div>
-                
-                <div class="group">
-                    <label for="phone-number">Phone Number</label>
-                    <input type="tel" id="phone-number" required maxlength="11" pattern="[0-9]{11}"/>
+
+                    <div class="group">
+                    <label for="donorPhone">Phone Number</label>
+                    <input type="tel" id="donorPhone" required />
                 </div>
                 
                 <div class="group">
@@ -51,19 +43,19 @@
                         <button type="button" class="condition-btn" onclick="selectCondition(this)">Old</button>
                         <button type="button" class="condition-btn" onclick="selectCondition(this)">Damaged</button>
                     </div>
-                    <input type="hidden" id="condition" required />
+                    <input type="hidden" id="furnitureCondition" required />
                 </div>
                 
                 <div class="group">
                     <label for="Description">Description</label>
-                    <textarea id="Description" name="Description" rows="4" required placeholder="Please describe your product"></textarea>
+                    <textarea id="Description" name="Description" rows="4" required placeholder="Please describe your item"></textarea>
                 </div>
             </div>
             
             <div class="right-column">
                 <div class="Type">
-                    <label for="Type">Furniture Type</label>
-                    <select id="Type" name="Type" class="select" required>
+                    <label for="furnitureType">Furniture Type</label>
+                    <select id="furnitureType" name="furnitureType" class="select" required>
                         <option value="">-- Furniture Type --</option>
                         <option value="Beds">Beds</option>
                         <option value="Couches">Couches</option>
@@ -103,16 +95,9 @@
             </div>
         </div>
 
-<footer>
-    <div class="footer">
-        <div class="logo-container">
-            <img src="Media/logo-footer.png" alt="logo" class="image"/>
-        </div>
-        <div class="ps">
-            <p><i class="fa-solid fa-phone"></i> Phone : +123456789</p>
-            <p><i class="fa-solid fa-map-pin"></i> Location : Alexandria, Egypt</p>
-            <p>Giving old Furniture a new life through creativity and sustainability</p>
-        </div>
+
+    <footer>
+    <div class="footer" id="footer">
     </div>
 </footer>
 <script src="JS/global.js"></script>

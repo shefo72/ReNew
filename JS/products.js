@@ -45,11 +45,54 @@ addProductItem("Media/Products/21.jpg", "Minimalist Bookshelf", 4500);
 
 
 
-// store data for my order page
-function addToCart(imageSrc, price, name) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ imageSrc, price, name });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert("Added to cart");
-}
+    function addToCart(imageSrc, price, name) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        price = parseFloat(price);
+    
+        const existingItem = cart.find(item => item.name === name);
+    
+        if (existingItem) {
+        existingItem.quantity += 1;
+        } else {
+    
+        const idMatch = imageSrc.match(/\/(\d+)\.jpg$/);
+        const id = idMatch ? parseInt(idMatch[1]) : Date.now();
+    
+        cart.push({
+            id,           // needed by backend
+            name,
+            price,
+            imageSrc,
+            quantity: 1   // needed by backend
+        });
+        }
+    
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert("Added to cart");
+    }
+    
+    
+    
+                    //Backend  requirements
+        document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const res = await fetch('http://localhost:8080/api/products');
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const products = await res.json();
+        
+            if (products.length > 0) {
+            products.forEach(prod => {
+                const imgPath = `Media/Products/${prod.productId}.jpg`;
+                addProductItem(imgPath, prod.productName, prod.price);
+            });
+            }
+        } catch (err) {
+            console.error('Failed to load products:', err);
+            alert('Error loading products. Please try again later.');
+        }
+        });
+        
+    
+    
 
