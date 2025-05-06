@@ -1,0 +1,163 @@
+main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  line-height: 1.6;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+  width: calc(50% - 20px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #5b3b1b;
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #5b3b1b;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+form input, form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 20px;
+}
+
+form button {
+  margin-top: 20px;
+  background-color: #e38b29;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--subColor);
+}
+
+.donation-card {
+  display: flex;
+  gap: 20px;
+  background: #f9f4ef;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+.donation-card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.donation-card img {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  object-fit:cover;
+}
+
+.donation-card .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.review-btn {
+  margin-top: 5px;
+  background-color: #8fc6c1;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: flex-start;
+  width: 100%;
+  border: 1px solid #2c3e50;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.review-btn:hover {
+  background-color: #2c3e50;
+  color: rgb(255, 255, 255);
+}
+
+
+@media (max-width: 900px) {
+  .card {
+    width: 85%;
+  }
+  
+  main {
+    padding: 15px;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .donation-card {
+    flex-direction: column;
+  }
+  
+  .donation-card img {
+    width: 100%;
+    max-height: 200px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  form label {
+    font-size: 16px;
+  }
+  
+  main {
+    padding: 10px;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .card {
+    padding: 15px;
+    border-radius: 12px;
+  }
+}

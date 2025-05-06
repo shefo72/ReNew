@@ -29,6 +29,21 @@ signinForm.addEventListener('submit', async function(e) {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
+
+    if (email === "admin@renew" && password === "admin") {
+      // Save mock data to localStorage
+      localStorage.setItem('userId', 'admin123');
+      localStorage.setItem('email', email);
+      localStorage.setItem('status', 'true');
+  
+      if (typeof updateNavBar === 'function') {
+        updateNavBar();
+      }
+  
+      window.location.href = 'dashboard.html'; 
+      return;
+    }
+
   try {
     const response = await fetch('http://localhost:8080/api/users/signin', {
       method: 'POST',
@@ -96,3 +111,4 @@ const logoutBtn = document.getElementById('logOut') || document.getElementById('
 if (logoutBtn) {
   logoutBtn.addEventListener('click', logout);
 }
+

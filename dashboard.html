@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/dashboard.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="icon" href="Media/sofa-icon.png">
+    <title>ReNew Dashboard</title>
+</head>
+<body>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="Media/logo-nav.png" alt="Logo"/>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Add New Product</h2>
+            <form>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Product name">
+                </div>
+                <div>
+                    <label for="price">Price</label>
+                    <input type="text" id="price" placeholder="Product price">
+                </div>
+                <div>
+                    <label for="image">Image</label>
+                    <input type="file" id="image">
+                </div>
+                <div>
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option>Select category</option>
+                        <option>Living Room</option>
+                        <option>Bedroom</option>
+                        <option>Dining Room</option>
+                        <option>Office</option>
+                    </select>
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+        
+        <section class="card">
+            <h2>Recent Donations</h2>
+            <div class="donation-card">
+                <img src="Media/Products/13.jpg" alt="donation image">
+                <div class="details">
+                    <strong>Chair Donation</strong>
+                    <p><b>Phone:</b> 0123456789</p>
+                    <p><b>Type:</b> Furniture</p>
+                    <p><b>Condition:</b> Good</p>
+                    <p>Wooden chair in good condition, can be reused</p>
+                    <button class="review-btn">Review</button>
+                </div>
+            </div>
+            <div class="donation-card">
+                <img src="Media/Products/18.jpg" alt="donation image">
+                <div class="details">
+                    <strong>Chair Donation</strong>
+                    <p><b>Phone:</b> 011645789</p>
+                    <p><b>Type:</b> Furniture</p>
+                    <p><b>Condition:</b> Good</p>
+                    <p>Wooden chair in good condition</p>
+                    <button class="review-btn">Review</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    </div>
+    <footer>
+        <div class="footer" id="footer">
+        </div>
+    </footer>
+<script src="JS/global.js"></script>
+<script src="JS/dashboard.js"></script>
+</body>
+</html>

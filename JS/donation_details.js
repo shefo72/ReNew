@@ -56,7 +56,12 @@ document.getElementById("donationForm").addEventListener("submit", async functio
         });
 
         if (response.ok) {
-            document.getElementById("successModal").style.display = "block";
+            const modal = document.getElementById("successModal");
+            modal.style.display = "block";
+        
+            setTimeout(() => {
+                window.location.href = "donate.html";
+            }, 3000); 
         } else {
             const errorText = await response.text();
             alert("Submission failed: " + errorText);
