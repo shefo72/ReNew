@@ -33,18 +33,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// log out
 document.addEventListener('DOMContentLoaded', function() {
     const logoutBtn = document.getElementById('logOut');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function() {
-            localStorage.removeItem('email');
-            localStorage.removeItem('userEmail');
-            localStorage.removeItem('userId');
-            localStorage.removeItem('isLoggedIn');
-            localStorage.removeItem('status');
-            console.log('User logged out.');
-            updateNavBar();
+            localStorage.clear();
+
+            if (typeof updateNavBar === 'function') {
+                updateNavBar();
+            }
+
             window.location.href = 'signin.html';
         });
     }
@@ -93,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function logout() {
     localStorage.clear();
     updateNavBar();
-    window.location.href = '/signin.html';
+    window.location.href = 'signin.html';
 }
 
 // added Footer 

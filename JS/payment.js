@@ -40,7 +40,7 @@ function submitPayment() {
         return;
     }
 
-    // Store in localStorage instead of sending to backend
+    // ✅ Store payment data in localStorage
     const paymentData = {
         userId,
         cardNumber,
@@ -50,10 +50,10 @@ function submitPayment() {
 
     localStorage.setItem('paymentData', JSON.stringify(paymentData));
 
-    console.log("Saved payment to localStorage:", paymentData);
+    console.log("✅ Saved payment to localStorage:", paymentData);
 
-    // Simulate success
-    finishPayment();
+    // ✅ Show success message after saving only
+    window.location.href = "index.html";
 }
 
 /* KEEP ORIGINAL BACKEND CALL FOR LATER USE

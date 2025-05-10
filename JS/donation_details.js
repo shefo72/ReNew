@@ -23,17 +23,21 @@ document.getElementById("imageUpload").addEventListener("change", function () {
     });
 });
 
-document.getElementById("donationForm").addEventListener("submit", async function (e) {
+document.getElementById("donationForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const formData = new FormData();
+    // Get form data
+    const donorName = document.getElementById("donorName").value;
+    const donorPhone = document.getElementById("donorPhone").value;
+    const furnitureCondition = document.getElementById("furnitureCondition").value;
+    const description = document.getElementById("Description").value;
+    const furnitureType = document.getElementById("furnitureType").value;
 
-    // Get values from form inputs
-    formData.append("donorName", document.getElementById("donorName").value);
-    formData.append("donorPhone", document.getElementById("donorPhone").value);
-    formData.append("furnitureCondition", document.getElementById("furnitureCondition").value);
-    formData.append("description", document.getElementById("Description").value);
-    formData.append("furnitureType", document.getElementById("furnitureType").value);
+    // Validate that data is filled
+    if (!donorName || !donorPhone || !furnitureCondition || !description || !furnitureType) {
+        alert("Please fill in all fields.");
+        return;
+    }
 
     // Get email from localStorage
     const email = localStorage.getItem("email");
@@ -41,34 +45,42 @@ document.getElementById("donationForm").addEventListener("submit", async functio
         alert("You must be logged in to submit a donation.");
         return;
     }
-    formData.append("email", email);
 
-    // Append uploaded images
+    // Prepare payment data (without backend call)
+    const donationData = {
+        donorName,
+        donorPhone,
+        furnitureCondition,
+        description,
+        furnitureType,
+        email,
+        // Get uploaded images as base64 from FileReader
+        images: []
+    };
+
+    // Get uploaded images
     const files = document.getElementById("imageUpload").files;
     for (let i = 0; i < files.length; i++) {
-        formData.append("imageUpload", files[i]);  // must match controller param name
-    }
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            donationData.images.push(e.target.result);
+            
+            // Check if all images are processed and then store data
+            if (donationData.images.length === files.length) {
+                localStorage.setItem('donationData', JSON.stringify(donationData));
 
-    try {
-        const response = await fetch('http://localhost:8080/api/donations/submit', {
-            method: 'POST',
-            body: formData
-        });
+                console.log("Data saved to localStorage:", donationData);
 
-        if (response.ok) {
-            const modal = document.getElementById("successModal");
-            modal.style.display = "block";
-        
-            setTimeout(() => {
-                window.location.href = "donate.html";
-            }, 3000); 
-        } else {
-            const errorText = await response.text();
-            alert("Submission failed: " + errorText);
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("Network error occurred.");
+                // Show success modal
+                const modal = document.getElementById("successModal");
+                modal.style.display = "block";
+
+                setTimeout(() => {
+                    window.location.href = "donate.html"; // Redirect after 3 seconds
+                }, 3000);
+            }
+        };
+        reader.readAsDataURL(files[i]);
     }
 });
 
