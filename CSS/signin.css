@@ -80,7 +80,7 @@ input:focus{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -158,4 +158,11 @@ input:focus{
         width: 100%;
         max-width: none;
     }
+}
+
+#message {
+    color: darkred;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding-left: 10px;
 }

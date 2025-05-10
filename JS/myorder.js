@@ -117,53 +117,53 @@ confirmBtn.classList.add("summarybtn");
 confirmBtn.addEventListener("click", submitOrder);
 document.querySelector(".summary").appendChild(confirmBtn);
 
-async function submitOrder() {
-    const userId = localStorage.getItem("userId");
-    if (!userId || cart.length === 0) {
-        alert("Please log in and add items to your cart.");
-        return;
-    }
+// async function submitOrder() {
+//     const userId = localStorage.getItem("userId");
+//     if (!userId || cart.length === 0) {
+//         alert("Please log in and add items to your cart.");
+//         return;
+//     }
 
-    const subtotal = cart.reduce((acc, item) => acc + parseFloat(item.price), 0);
-    const SHIPPING_FEE = 600;
-    const DISCOUNT = 200;
-    const totalAmount = subtotal + SHIPPING_FEE - DISCOUNT;
+//     const subtotal = cart.reduce((acc, item) => acc + parseFloat(item.price), 0);
+//     const SHIPPING_FEE = 600;
+//     const DISCOUNT = 200;
+//     const totalAmount = subtotal + SHIPPING_FEE - DISCOUNT;
 
-    try {
-        // 1. Create Order
-        const orderResponse = await fetch("http://localhost:8080/api/orders/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ userId: parseInt(userId), totalAmount })
-        });
+//     try {
+//         // 1. Create Order
+//         const orderResponse = await fetch("http://localhost:8080/api/orders/", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({ userId: parseInt(userId), totalAmount })
+//         });
 
-        if (!orderResponse.ok) throw new Error("Failed to create order");
+//         if (!orderResponse.ok) throw new Error("Failed to create order");
 
-        const { orderId } = await orderResponse.json();
+//         const { orderId } = await orderResponse.json();
 
-        // 2. Add Items to Order
-        for (let item of cart) {
-            await fetch(`http://localhost:8080/api/orders/${orderId}/items`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    productId: item.id, // ensure your cart includes `id`
-                    quantity: item.quantity ||1
-                })
-            });
-        }
+//         // 2. Add Items to Order
+//         for (let item of cart) {
+//             await fetch(`http://localhost:8080/api/orders/${orderId}/items`, {
+//                 method: "POST",
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+//                 body: JSON.stringify({
+//                     productId: item.id, // ensure your cart includes `id`
+//                     quantity: item.quantity ||1
+//                 })
+//             });
+//         }
 
-        alert("Order submitted successfully!");
-        cart = [];
-        localStorage.removeItem("cart");
-        renderCart();
-        modal.style.display = "none";
-    } catch (error) {
-        console.error("Order submission failed:", error);
-        alert("An error occurred. Please try again.");
-    }
-}
+//         alert("Order submitted successfully!");
+//         cart = [];
+//         localStorage.removeItem("cart");
+//         renderCart();
+//         modal.style.display = "none";
+//     } catch (error) {
+//         console.error("Order submission failed:", error);
+//         alert("An error occurred. Please try again.");
+//     }
+// }

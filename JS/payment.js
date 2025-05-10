@@ -9,11 +9,11 @@ document.querySelector('.paynow button').addEventListener('click', function(even
 
 function finishPayment() {
     alert("Payment done successfully!");
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
 }
 
+// LOCAL ONLY: Store payment data and simulate success
 function submitPayment() {
-    // Get payment details
     const cardNumber = document.getElementById('cardNumber').value;
     const expirationDate = document.getElementById('expirationDate').value;
     const cvv = document.getElementById('cvvNumber').value;
@@ -40,54 +40,35 @@ function submitPayment() {
         return;
     }
 
-    console.log("Sending payment request...");
-    console.log("User ID:", userId);
-    console.log("Card Number:", cardNumber);
-    console.log("Expiration Date:", expirationDate);
-    console.log("CVV:", cvv);
+    // Store in localStorage instead of sending to backend
+    const paymentData = {
+        userId,
+        cardNumber,
+        expirationDate,
+        cvv
+    };
 
-    // Format the date to match LocalDate.parse() format (YYYY-MM-DD)
-    // Assuming expirationDate is in MM/YYYY format from input
-    let formattedDate = expirationDate;
-    if (expirationDate.includes('/')) {
-        const [month, year] = expirationDate.split('/');
-        // Set to last day of the month for expiration
-        formattedDate = `${year}-${month.padStart(2, '0')}-01`;
-    }
+    localStorage.setItem('paymentData', JSON.stringify(paymentData));
 
-    // Create form data for sending
-    const formData = new FormData();
-    formData.append('Id', userId);
-    formData.append('cardNumber', cardNumber);
-    formData.append('expirationDate', formattedDate);
-    formData.append('cvv', cvv);
+    console.log("Saved payment to localStorage:", paymentData);
 
+    // Simulate success
+    finishPayment();
+}
+
+/* KEEP ORIGINAL BACKEND CALL FOR LATER USE
+function submitPayment() {
+    ...
     // Send payment request
     fetch('http://localhost:8080/api/payments/Payment', {
         method: 'POST',
         body: formData
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Payment request failed with status: ' + response.status);
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log("Server responded:", data);
-            if (data.includes("Payment successful")) {
-                finishPayment(); // Call finishPayment after successful payment
-            } else {
-                alert(data); // Show error message from server
-            }
-        })
-        .catch(err => {
-            console.error('Payment error:', err);
-            alert('An error occurred during payment processing: ' + err.message);
-        });
+    ...
 }
+*/
 
-// Check card number
+// Card number validation
 const cardNumberInput = document.getElementById('cardNumber');
 const cardError = document.getElementById('cardError');
 if (cardNumberInput) {
@@ -142,13 +123,12 @@ if (cvvInput) {
     }
 }
 
-// Check if the user is logged in when page loads
+
+// OPTIONAL: Check if the user is logged in
 document.addEventListener('DOMContentLoaded', function() {
     const isLoggedIn = localStorage.getItem('status');
-
     if (!isLoggedIn || isLoggedIn !== 'true') {
-        // Not logged in? Redirect to login page
         alert('You must be logged in to access the payment page.');
-        window.location.href = 'signin.html'; // Redirect to your login page
+        window.location.href = 'signin.html';
     }
 });

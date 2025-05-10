@@ -112,22 +112,22 @@ function addToCart(imageSrc, price, name) {
     
     
                     //Backend  requirements
-        document.addEventListener('DOMContentLoaded', async () => {
-        try {
-            const res = await fetch('http://localhost:8080/api/products');
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            const products = await res.json();
+        // document.addEventListener('DOMContentLoaded', async () => {
+        // try {
+        //     const res = await fetch('http://localhost:8080/api/products');
+        //     if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        //     const products = await res.json();
         
-            if (products.length > 0) {
-            products.forEach(prod => {
-                const imgPath = `Media/Products/${prod.productId}.jpg`;
-                addProductItem(imgPath, prod.productName, prod.price);
-            });
-            }
-        } catch (err) {
-            console.error('Failed to load products:', err);
-            alert('Error loading products. Please try again later.');
-        }
-        });
+        //     if (products.length > 0) {
+        //     products.forEach(prod => {
+        //         const imgPath = `Media/Products/${prod.productId}.jpg`;
+        //         addProductItem(imgPath, prod.productName, prod.price);
+        //     });
+        //     }
+        // } catch (err) {
+        //     console.error('Failed to load products:', err);
+        //     alert('Error loading products. Please try again later.');
+        // }
+        // });
 
 

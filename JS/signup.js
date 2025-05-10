@@ -65,57 +65,40 @@ phoneInput.form?.addEventListener('submit', function(e) {
 });
 
 
-    //back end requirements
-
 // Form Submit
-document.getElementById('signupform').addEventListener('submit', async function (e) {
-  e.preventDefault(); // prevent normal form submit
+document.getElementById('signupform').addEventListener('submit', function (e) {
+  e.preventDefault();
 
   if (!validatePassword()) {
-    return; // Stop if password is invalid
+    return;
   }
 
-  // Collect data
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const phone = document.getElementById('phone').value;
   const password = document.getElementById('password').value;
   const governorate = document.getElementById('governorate').value;
 
-  // Create object to send
+  // Check if user already exists
+  if (localStorage.getItem(`user_${email}`)) {
+    alert('This email is already registered.');
+    return;
+  }
+
   const userData = {
-    name: name,
-    email: email,
-    phone: phone,
-    password: password,
-    governorate: governorate
+    name,
+    email,
+    phone,
+    password,
+    governorate
   };
 
-  try {
-    const response = await fetch('http://localhost:8080/api/users/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(userData)
-    });
+  localStorage.setItem(`user_${email}`, JSON.stringify(userData));
+  alert('Account created successfully!');
 
-    if (response.ok) {
-      const data = await response.json();
-      alert('User registered successfully!');
+  // Store login status
+  localStorage.setItem('isLoggedIn', 'true');
+  localStorage.setItem('userEmail', email);
 
-      // Save login status after successful signup
-      localStorage.setItem('isLoggedIn', 'true');
-      // Optional: Save user info
-      localStorage.setItem('userEmail', email);
-
-      window.location.href = 'signin.html'; // Redirect to homepage or wherever you want
-    } else {
-      const errorData = await response.json();
-      alert('Error: ' + (errorData.message || 'Failed to register'));
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    alert('Something went wrong!');
-  }
+  window.location.href = 'signin.html';
 });

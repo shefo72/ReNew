@@ -21,94 +21,40 @@ function validatePassword() {
   }
 }
 
-// handle login form submission
-const signinForm = document.getElementById('signinform');
-signinForm.addEventListener('submit', async function(e) {
-  e.preventDefault(); // prevent default form submission
+document.getElementById('signinform').addEventListener('submit', function (e) {
+  e.preventDefault();
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
+  const messageBox = document.getElementById('message');
 
+  messageBox.textContent = ''; // clear old messages
 
-    if (email === "admin@renew" && password === "admin") {
-      // Save mock data to localStorage
-      localStorage.setItem('userId', 'admin123');
+  if (email === "admin@renew" && password === "admin") {
+    localStorage.setItem('userId', 'admin123');
+    localStorage.setItem('email', email);
+    localStorage.setItem('status', 'true');
+    if (typeof updateNavBar === 'function') updateNavBar();
+    window.location.href = 'dashboard.html';
+    return;
+  }
+
+  const storedUser = localStorage.getItem(`user_${email}`);
+
+  if (storedUser) {
+    const userData = JSON.parse(storedUser);
+
+    if (userData.password === password) {
+      localStorage.setItem('userId', email);
       localStorage.setItem('email', email);
       localStorage.setItem('status', 'true');
-  
-      if (typeof updateNavBar === 'function') {
-        updateNavBar();
-      }
-  
-      window.location.href = 'dashboard.html'; 
-      return;
-    }
 
-  try {
-    const response = await fetch('http://localhost:8080/api/users/signin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      console.log('Login successful!', data);
-
-      // --- Save userId and email to localStorage ---
-      localStorage.setItem('userId', data.userId);
-      localStorage.setItem('email', data.email);
-
-      // --- NEW: Save login status ---
-      localStorage.setItem('status', 'true');
-
-      // --- NEW: Update the navbar immediately ---
-      if (typeof updateNavBar === 'function') {
-        updateNavBar();
-      }
-
-      // Redirect the user after successful login
+      if (typeof updateNavBar === 'function') updateNavBar();
       window.location.href = 'Products.html';
     } else {
-      const errorData = await response.json();
-      console.error('Login failed:', errorData);
-      alert('Login failed: ' + (errorData.message || 'Please check your credentials.'));
+      messageBox.textContent = 'Incorrect password.';
     }
-  } catch (error) {
-    console.error('Error during login:', error);
-    alert('An error occurred. Please try again.');
+  } else {
+    messageBox.textContent = 'User not found. Please register first.';
   }
 });
-
-// Check if user is logged in
-const userId = localStorage.getItem('userId');
-const email = localStorage.getItem('email');
-
-// If logged in
-if (userId && email) {
-  console.log('User is logged in:', email);
-
-  // Show logout button
-  const logoutBtn = document.getElementById('logOut');
-  if (logoutBtn) logoutBtn.style.display = 'block';
-} else {
-  console.log('No user logged in.');
-}
-
-// Logout function
-function logout() {
-  localStorage.clear(); // Clears all login info
-  if (typeof updateNavBar === 'function') {
-    updateNavBar(); // Update navbar
-  }
-  window.location.href = '/signin.html'; // Redirect to signin page
-}
-
-// Attach logout function
-const logoutBtn = document.getElementById('logOut') || document.getElementById('logOut');
-if (logoutBtn) {
-  logoutBtn.addEventListener('click', logout);
-}
-
